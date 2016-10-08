@@ -1,0 +1,13 @@
+{
+  "name": "purescript-type-equality",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "devDependencies": {
+    "purescript-console": "^2.0.0",
+    "purescript-newtype": "^1.0.0"
+  }
+}
