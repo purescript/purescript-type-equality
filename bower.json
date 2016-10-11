@@ -6,6 +6,11 @@
     "bower_components",
     "output"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-type-equality.git"
+  },
   "devDependencies": {
     "purescript-console": "^2.0.0",
     "purescript-newtype": "^1.0.0"
