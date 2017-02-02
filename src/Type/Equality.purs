@@ -11,7 +11,7 @@ module Type.Equality
 -- | instance below will force the two type arguments
 -- | to unify when either one is known.
 -- |
--- | Note: any instance will necessarily ovelap with
+-- | Note: any instance will necessarily overlap with
 -- | `refl` below, so instances of this class should
 -- | not be defined in libraries.
 class TypeEquals a b | a -> b, b -> a where
