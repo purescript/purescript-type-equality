@@ -1,6 +1,6 @@
 module Type.Equality
   ( class TypeEquals
-  , typeEqualsProof
+  , proof
   , to
   , from
   ) where
@@ -17,10 +17,10 @@ module Type.Equality
 -- | not be defined in libraries.
 class TypeEquals :: forall k. k -> k -> Constraint
 class TypeEquals a b | a -> b, b -> a where
-  typeEqualsProof :: forall p. p a -> p b
+  proof :: forall p. p a -> p b
 
 instance refl :: TypeEquals a a where
-  typeEqualsProof a = a
+  proof a = a
 
 newtype Op :: forall k. k -> k -> Type
 newtype Op a b = Op (forall p. p b -> p a)
@@ -30,7 +30,7 @@ symm proof = case proof (Op (\pa -> pa) :: Op a a) of
   (Op f :: Op a b) -> f
 
 to :: forall a b. TypeEquals a b => a -> b
-to = typeEqualsProof \a -> a
+to = proof \a -> a
 
 from :: forall a b. TypeEquals a b => b -> a
-from = symm typeEqualsProof \b -> b
+from = symm proof \b -> b

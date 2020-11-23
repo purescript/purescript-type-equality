@@ -4,7 +4,7 @@ import Prelude
 import Effect (Effect)
 import Effect.Console (log)
 import Data.Newtype (class Newtype, unwrap)
-import Type.Equality (class TypeEquals, typeEqualsProof, to, from)
+import Type.Equality (class TypeEquals, proof, to, from)
 
 newtype RecordNewtype = RecordNewtype
   { message :: String }
@@ -16,7 +16,7 @@ instance newtypeRecordNewtype ::
   unwrap (RecordNewtype rec) = from rec
 
 test2 :: forall ty row. TypeEquals row ( message :: String ) => Newtype ty (Record row) => ty -> String
-test2 = unwrap >>> typeEqualsProof >>> _.message
+test2 = unwrap >>> proof >>> _.message
 
 main :: Effect Unit
 main = log (test2 (RecordNewtype { message: "Done" }))
