@@ -22,15 +22,12 @@ class TypeEquals a b | a -> b, b -> a where
 instance refl :: TypeEquals a a where
   proof a = a
 
-newtype Op :: forall k. k -> k -> Type
-newtype Op a b = Op (forall p. p b -> p a)
-
-symm :: forall a b. (forall p. p a -> p b) -> (forall p. p b -> p a)
-symm proof = case proof (Op (\pa -> pa) :: Op a a) of
-  (Op f :: Op a b) -> f
+newtype To a b = To (a -> b)
 
 to :: forall a b. TypeEquals a b => a -> b
-to = proof \a -> a
+to = case proof (To (\a -> a)) of To f -> f
+
+newtype From a b = From (b -> a)
 
 from :: forall a b. TypeEquals a b => b -> a
-from = symm proof \b -> b
+from = case proof (From (\a -> a)) of From f -> f
