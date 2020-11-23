@@ -15,8 +15,8 @@ instance newtypeRecordNewtype ::
   wrap = RecordNewtype <<< to
   unwrap (RecordNewtype rec) = from rec
 
-test2 :: forall ty row. TypeEquals row ( message :: String ) => Newtype ty (Record row) => ty -> String
-test2 = unwrap >>> proof >>> _.message
+message :: forall ty row. TypeEquals row ( message :: String ) => Newtype ty (Record row) => ty -> String
+message = unwrap >>> proof >>> _.message
 
 main :: Effect Unit
-main = log (test2 (RecordNewtype { message: "Done" }))
+main = log (message (RecordNewtype { message: "Done" }))
