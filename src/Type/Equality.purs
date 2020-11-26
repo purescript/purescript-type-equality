@@ -1,5 +1,6 @@
 module Type.Equality
   ( class TypeEquals
+  , proof
   , to
   , from
   ) where
@@ -14,10 +15,19 @@ module Type.Equality
 -- | Note: any instance will necessarily overlap with
 -- | `refl` below, so instances of this class should
 -- | not be defined in libraries.
+class TypeEquals :: forall k. k -> k -> Constraint
 class TypeEquals a b | a -> b, b -> a where
-  to :: a -> b
-  from :: b -> a
+  proof :: forall p. p a -> p b
 
 instance refl :: TypeEquals a a where
-  to a = a
-  from a = a
+  proof a = a
+
+newtype To a b = To (a -> b)
+
+to :: forall a b. TypeEquals a b => a -> b
+to = case proof (To (\a -> a)) of To f -> f
+
+newtype From a b = From (b -> a)
+
+from :: forall a b. TypeEquals a b => b -> a
+from = case proof (From (\a -> a)) of From f -> f
