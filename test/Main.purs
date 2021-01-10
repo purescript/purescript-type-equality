@@ -11,9 +11,7 @@ newtype RecordNewtype = RecordNewtype
 
 instance newtypeRecordNewtype ::
   TypeEquals inner { message :: String }
-    => Newtype RecordNewtype inner where
-  wrap = RecordNewtype <<< to
-  unwrap (RecordNewtype rec) = from rec
+    => Newtype RecordNewtype inner
 
 message :: forall ty row. TypeEquals row ( message :: String ) => Newtype ty (Record row) => ty -> String
 message = unwrap >>> proof >>> _.message
