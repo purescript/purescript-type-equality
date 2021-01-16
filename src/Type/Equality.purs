@@ -5,6 +5,8 @@ module Type.Equality
   , from
   ) where
 
+import Prim.Coerce (class Coercible)
+
 -- | This type class asserts that types `a` and `b`
 -- | are equal.
 -- |
@@ -16,7 +18,7 @@ module Type.Equality
 -- | `refl` below, so instances of this class should
 -- | not be defined in libraries.
 class TypeEquals :: forall k. k -> k -> Constraint
-class TypeEquals a b | a -> b, b -> a where
+class Coercible a b <= TypeEquals a b | a -> b, b -> a where
   proof :: forall p. p a -> p b
 
 instance refl :: TypeEquals a a where
