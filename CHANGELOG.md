@@ -14,7 +14,8 @@ Bugfixes:
 
 Other improvements:
 - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#12)
-- Added a changelog and pull request template (#13, #15)
+- Added a changelog and pull request template (#13, #15, #16)
+- Fixed tests by making `Coercible` a super class of `TypeEquals` (#14)
 
 ## [v3.0.0](https://github.com/purescript/purescript-type-equality/releases/tag/v3.0.0) - 2018-05-22
 
