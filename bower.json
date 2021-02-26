@@ -4,7 +4,7 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript/purescript-type-equality.git"
+    "url": "https://github.com/purescript/purescript-type-equality.git"
   },
   "ignore": [
     "**/.*",
@@ -16,7 +16,7 @@
     "package.json"
   ],
   "devDependencies": {
-    "purescript-console": "master",
-    "purescript-newtype": "master"
+    "purescript-console": "^5.0.0",
+    "purescript-newtype": "^4.0.0"
   }
 }
