@@ -16,7 +16,7 @@
     "package.json"
   ],
   "devDependencies": {
-    "purescript-console": "^5.0.0",
-    "purescript-newtype": "^4.0.0"
+    "purescript-console": "master",
+    "purescript-newtype": "master"
   }
 }
