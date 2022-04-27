@@ -12,16 +12,16 @@ Bugfixes:
 
 Other improvements:
 
-## [v5.0.0](https://github.com/purescript/purescript-type-equality/releases/tag/v5.0.0) - 2022-04-27
+## [v4.0.1](https://github.com/purescript/purescript-type-equality/releases/tag/v4.0.1) - 2022-04-27
 
 Breaking changes:
-- Update project and dependencies to v0.15.0 PureScript (#18 by @JordanMartinez)
 
 New features:
 
 Bugfixes:
 
 Other improvements:
+- Update project and dependencies to v0.15.0 PureScript (#18 by @JordanMartinez)
 
 ## [v4.0.0](https://github.com/purescript/purescript-type-equality/releases/tag/v4.0.0) - 2021-02-26
 
