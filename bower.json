@@ -1,6 +1,6 @@
 {
   "name": "purescript-type-equality",
-  "homepage": "https://github.com/purescript/purescript-invariant",
+  "homepage": "https://github.com/purescript/purescript-type-equality",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
