@@ -12,6 +12,8 @@ Bugfixes:
 
 Other improvements:
 
+- Migrate from Bower/Pulp to Spago and update CI and formatting tools.
+
 ## [v4.0.1](https://github.com/purescript/purescript-type-equality/releases/tag/v4.0.1) - 2022-04-27
 
 Breaking changes:
