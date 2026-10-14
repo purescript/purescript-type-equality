@@ -23,19 +23,23 @@ New features:
 Bugfixes:
 
 Other improvements:
+
 - Update project and dependencies to v0.15.0 PureScript (#18 by @JordanMartinez)
 
 ## [v4.0.0](https://github.com/purescript/purescript-type-equality/releases/tag/v4.0.0) - 2021-02-26
 
 Breaking changes:
+
 - Added support for PureScript 0.14 and dropped support for all previous versions (#10, #14)
 
 New features:
+
 - Updated implementation to use Leibniz equality (#11)
 
 Bugfixes:
 
 Other improvements:
+
 - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#12)
 - Added a changelog and pull request template (#13, #15, #16)
 - Fixed tests by making `Coercible` a super class of `TypeEquals` (#14)
